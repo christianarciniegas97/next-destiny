@@ -17,7 +17,7 @@ export default function Hero(){
                 Planeando recorrer Asia desde Argentina
                 guías reales, presupuestos, visas y experiencias.
             </p>
-                <Link href={ process.env.GUIAS!}>
+                <Link href="/Destinos">
                     <button className="btn btn-primary">
                          Guías
                     </button>
