@@ -20,13 +20,13 @@ export default function Navbar() {
         <div className="flex-none">
             <ul className="menu menu-horizontal px-1">
             <li>
-                <Link  href={process.env.DESTINY_PAGE!}>Destinos</Link>
+                <Link href="/Destinos">Destinos</Link>
             </li>
             <li>
-                <Link  href={process.env.COST!}>Costos y Presupuestos</Link>
+                <Link href="/Costos">Costos y Presupuestos</Link>
             </li>
             <li>
-                <Link  href={process.env.VISAS!}>Visas y Requisitos</Link>
+                <Link  href="/Visas">Visas y Requisitos</Link>
             </li>
             </ul>
         </div>
