@@ -1,0 +1,13 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+
+
+.IconNavbar{
+    width: auto;
+    height: auto;
+}
+
+.cardsLayout{
+    display: flex;
+}
