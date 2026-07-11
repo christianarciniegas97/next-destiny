@@ -1,10 +1,17 @@
+"use client";
+
+
 import Link from "next/link"
 import Image from "next/image"
 import icon from "../../../public/images/pin_navigation_map_destination_icon_225369.png"
+import { useState } from "react"
 
 export default function Navbar() {
 
+    const [ isOpen, setIsOpen ] = useState(false);
+
     return(
+        
         
         <div className="navbar bg-indigo-950 shadow-sm fixed z-10">
             <div className="flex-1">
@@ -19,11 +26,8 @@ export default function Navbar() {
 
             </div>
         <div className="flex-none">
-                <div className="dropdown">
-                <div 
-                   tabIndex={1} 
-                   role="button" 
-                   className="btn btn-ghost lg:hidden">
+                <div>
+                <button className="btn btn-ghost lg:hidden" onClick={ () => setIsOpen(!isOpen)}>
                     <svg 
                         xmlns="http://www.w3.org/2000/svg" 
                         className="h-5 w-5" 
@@ -32,31 +36,24 @@ export default function Navbar() {
                         stroke="currentColor"> 
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /> 
                     </svg>
-                    <ul  
-                        className="    menu
-                                dropdown-content
-                                fixed
-                                top-16
-                                left-0
-                                w-screen
-                                h-[calc(100vh-4rem)]
-                                bg-indigo-950
-                                z-50
-                                p-4">
+                </button>
+                    { isOpen && (
+                        <ul  className="menu fixed top-16 left-0 w-screen bg-indigo-950 z-100 p-4 text-amber-500">
                             <li>
-                                <Link href="/Destinos">Destinos</Link>
+                                <Link href="/Destinos" onClick={() => setIsOpen(false)}>Destinos</Link>
                             </li>
                             <li>
-                                <Link href="/Costos">Costos y Presupuestos</Link>
+                                <Link href="/Costos" onClick={() => setIsOpen(false)}>Costos y Presupuestos</Link>
                             </li>
                             <li>
-                                <Link  href="/Visas">Visas y Requisitos</Link>
+                                <Link  href="/Visas" onClick={() => setIsOpen(false)}>Visas y Requisitos</Link>
                             </li>
                     </ul>
-                
-                </div>
+                    )
+                }
+               
             </div>
-                <ul className="menu menu-horizontal hidden lg:flex px-1">
+                <ul className="menu menu-horizontal hidden lg:flex px-1 text-base text-amber-500" >
                 <li>
                     <Link href="/Destinos">Destinos</Link>
                 </li>

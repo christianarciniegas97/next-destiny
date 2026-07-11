@@ -33,3 +33,15 @@ export const cardInfo = [
         paragraph: "Malasia es un país de gran variedad cultural y natural. Es el hogar de malayos, chinos, indios y varios otros grupos étnicos más pequeños."
     }
 ]
+
+export const CostosData = [
+    {
+        id : "tai_Costos",
+        title : "Presupuesto 30 días en Tailandia",
+    },
+    {
+        id : "viet_Costos",
+        title : "Costos Diarios en Vietnam",
+    },
+
+]
