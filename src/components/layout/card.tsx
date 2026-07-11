@@ -1,5 +1,4 @@
 import Image from "next/image"
-import BtnSeeMore from "./btnSeeMore"
 import Link from "next/link"
 
 type cardProps = {
@@ -40,8 +39,8 @@ export default function Card ({
             <h2 className="card-title">{title}</h2>
             <p>{paragraph}</p>
             <div className="card-actions justify-end">
-                <Link  href={url}>
-                       <BtnSeeMore />
+                <Link  href={url || "/Destinos"} className="bg-blue-600 hover:bg-blue-700 text-white text-xs font-semibold px-4 py-2 rounded-lg transition-all">
+                    Ver mas
                 </Link>
             </div>
         </div>

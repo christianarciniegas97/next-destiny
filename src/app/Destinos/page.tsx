@@ -13,7 +13,7 @@ export default function Destinos() {
         alt={cardInfo[0].title}
         title={cardInfo[0].title}
         paragraph={cardInfo[0].paragraph}
-        url={cardInfo[0].url}
+        url={cardInfo[0].url || "/"}
       />
       <Card 
         id={cardInfo[1].id}
@@ -21,7 +21,7 @@ export default function Destinos() {
         alt={cardInfo[1].title}
         title={cardInfo[1].title}
         paragraph={cardInfo[1].paragraph}
-        url={cardInfo[1].url}
+      url={cardInfo[1].url || "/"}
       />
       <Card 
         id={cardInfo[2].id}
@@ -29,7 +29,7 @@ export default function Destinos() {
         alt={cardInfo[2].title}
         title={cardInfo[2].title}
         paragraph={cardInfo[2].paragraph}
-        url={cardInfo[2].url}
+        url={cardInfo[2].url || "/"}
       />
       <Card 
         id={cardInfo[3].id}
@@ -37,7 +37,7 @@ export default function Destinos() {
         alt={cardInfo[3].title}
         title={cardInfo[3].title}
         paragraph={cardInfo[3].paragraph}
-        url={cardInfo[3].url}
+        url={cardInfo[3].url || "/"}
       />
      </div>
      </>
