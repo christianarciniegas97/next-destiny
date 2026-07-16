@@ -1,22 +1,25 @@
+import { prisma } from "../lib/prisma";
+
 export class DestinationRepository {
-    private destinos = [
-            {
-                id: 1,
-                name:"Thailand"
+
+
+   async findAll() {
+        return  await prisma.destination.findMany({
+            where : {
+                published:true
             },
-
-            {
-                id: 2,
-                name:"Vietnam"
-            }
-    ]
-
-    findAll() {
-        return this.destinos;
+            orderBy: {
+                id: "asc",
+            },
+        });
     }
 
-    findById(id : number) {
-        return this.destinos.find( (destinos) => destinos.id === id)
+   async findById(id : number) {
+        return await prisma.destination.findUnique({
+            where:{
+                id
+            }
+        });
         
     }
 

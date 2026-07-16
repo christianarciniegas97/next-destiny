@@ -1,14 +1,15 @@
 import Image from "next/image"
 import Link from "next/link"
 
-type cardProps = {
-    id : string ,
-    image : any,
-    alt : string,
-    title : string,
-    paragraph : string
-    url : any
+type CardProps = {
+    id: string;
+    image: string;
+    alt: string;
+    title: string;
+    paragraph: string;
+    url: string;
 }
+
 
 const imageStyle = {
   border: '1px solid #fff',
@@ -25,14 +26,18 @@ export default function Card ({
      paragraph,
      url
 
-    }: cardProps ){
+    }: CardProps ){
+
+    console.log("Card image:", image);    
     return(
         <div id={id} className="card bg-base-100 w-full shadow-sm">
         <figure>
             <Image
-            src={image}
-            alt={alt}
-            style={imageStyle}
+                src={image}
+                alt={alt}
+                width={500}
+                height={400}
+                style={imageStyle}
             />
         </figure>
         <div className="card-body">

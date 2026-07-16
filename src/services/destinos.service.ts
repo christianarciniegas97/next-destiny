@@ -3,11 +3,20 @@ import { DestinationRepository } from "../repository/destinos.repository"
 const repository = new DestinationRepository()
 
 export class DestinosServices {
-    getAll() {
-        return repository.findAll()
+    async getAll() {
+        return await repository.findAll()
     }
 
-    getById(id : number ){
-        return repository.findById(id)
+    async getById(id:number){
+
+        const destino = await repository.findById(id);
+
+        if(!destino){
+            return {
+                message:"Destination not found"
+            }
+        }
+
+        return destino;
     }
 }

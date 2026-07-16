@@ -18,7 +18,7 @@ export async function GET(
                 }
             )
         }
-    const destino = service.getById(destinoID)
+    const destino = await service.getById(destinoID)
     if(!destino){
         return Response.json( 
                 {
