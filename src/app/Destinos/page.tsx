@@ -12,7 +12,7 @@ export default async function Destinos() {
     return (
         <main className="p-10 bg-gray-500">
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                {destinos.map((destino) => (
+                {destinos.map((destino : any) => (
                     <Card
                         key={destino.id}
                         id={destino.id}
