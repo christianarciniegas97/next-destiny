@@ -6,4 +6,8 @@ export class DestinosServices {
     getAll() {
         return repository.findAll()
     }
+
+    getById(id : number ){
+        return repository.findById(id)
+    }
 }
