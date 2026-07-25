@@ -59,13 +59,13 @@ export default function Hero() {
             <circle cx="620" cy="50" r="4" fill="#F2733A" />
           </svg>
           <span className="absolute top-10 left-0 text-[12px] font-semibold text-white/50 tracking-wide">
-            Tailandia
+            America
           </span>
           <span className="absolute top-10 left-[47%] text-[12px] font-semibold text-white/50 tracking-wide">
-            Vietnam
+            Europa
           </span>
           <span className="absolute top-10 right-0 text-[12px] font-semibold text-white/50 tracking-wide">
-            Japón
+            Asia
           </span>
         </div>
       </div>

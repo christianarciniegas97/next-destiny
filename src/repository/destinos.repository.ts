@@ -6,13 +6,22 @@ export class DestinationRepository {
    async findAll() {
         return  await prisma.destination.findMany({
             where : {
-                published:true
+                published:true,
             },
             orderBy: {
                 id: "asc",
             },
         });
     }
+
+   async findFeaturedTrue () {
+        return await prisma.destination.findMany({
+            where : {
+                published:true,
+                featured : true
+            }
+        })
+   }
 
    async findById(id : number) {
         return await prisma.destination.findUnique({
