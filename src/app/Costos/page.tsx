@@ -1,5 +1,4 @@
 import Card from "@/src/components/layout/card"
-import { CostosData, cardInfo } from "@/src/data/cards"
 
 
 export default function Dashboard() {

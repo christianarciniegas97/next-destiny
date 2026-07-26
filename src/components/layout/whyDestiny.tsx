@@ -33,7 +33,7 @@ export default function WhyDestiny() {
       <div className="max-w-6xl mx-auto px-6">
         <div className="text-center max-w-xl mx-auto mb-14">
           <span className="text-indigo-600 font-bold text-[13px] tracking-widest uppercase">
-            ¿Por qué Destiny?
+            ¿Por qué nosotros?
           </span>
           <h2 className="font-serif text-[28px] sm:text-[32px] font-medium mt-2.5">
             Menos pestañas abiertas, más viaje

@@ -3,6 +3,7 @@ import { DestinationRepository } from "../repository/destinos.repository"
 const repository = new DestinationRepository()
 
 export class DestinosServices {
+    
     async getAll() {
         return await repository.findAll()
     }
@@ -18,5 +19,18 @@ export class DestinosServices {
         }
 
         return destino;
+    }
+
+    /* 
+    ** Devuelve solo los destinos que son features
+    */
+    async getFeatured(){
+        const isFeaturedTrue =  await repository.findFeaturedTrue();
+        if(!isFeaturedTrue){
+            return {
+                message:"Destination not found"
+            }
+        }
+        return isFeaturedTrue
     }
 }

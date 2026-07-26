@@ -1,38 +1,10 @@
 import Link from "next/link";
+import { DestinosServices } from "@/src/services/destinos.service";
 
-type Destination = {
-  name: string;
-  price: string;
-  desc: string;
-  href: string;
-  gradient: string;
-};
+const services = new DestinosServices()
+export default async function FeaturedDestinations() {
 
-const destinations: Destination[] = [
-  {
-    name: "Tailandia",
-    price: "$35/día",
-    desc: "Islas turquesa, templos dorados y la comida callejera más barata del sudeste asiático.",
-    href: "/Destinos/tailandia",
-    gradient: "from-[#0d5c66] via-[#1c8b91] to-[#7fd8c4]",
-  },
-  {
-    name: "Vietnam",
-    price: "$28/día",
-    desc: "De la Bahía de Ha Long a Hoi An: paisajes imposibles con el presupuesto más ajustado de la región.",
-    href: "/Destinos/vietnam",
-    gradient: "from-[#0c3d2e] via-[#1f7a5c] to-[#a9d98a]",
-  },
-  {
-    name: "Japón",
-    price: "$90/día",
-    desc: "Tradición y neón conviviendo. Más caro, pero con trenes puntuales al segundo.",
-    href: "/Destinos/japon",
-    gradient: "from-[#3a1730] via-[#8c3a5c] to-[#f3a56b]",
-  },
-];
-
-export default function FeaturedDestinations() {
+  const featuredTrue =  await services.getFeatured();
   return (
     <section id="destinos" className="py-20 bg-slate-50/60">
       <div className="max-w-6xl mx-auto px-6">
@@ -49,20 +21,27 @@ export default function FeaturedDestinations() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {destinations.map((d) => (
+          {featuredTrue.map((destinies : any) => (
             <Link
-              key={d.name}
-              href={d.href}
+              key={destinies.name}
+              href={`/${destinies.name}`}
               className="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
-              <div className={`relative h-48 bg-gradient-to-br ${d.gradient}`}>
-                <span className="absolute top-3.5 right-3.5 bg-white/90 text-slate-800 font-bold text-[13px] px-3 py-1.5 rounded-full">
-                  {d.price}
-                </span>
-              </div>
-              <div className="p-6">
-                <h3 className="font-serif text-xl font-medium">{d.name}</h3>
-                <p className="text-slate-500 text-sm mt-2 leading-relaxed">{d.desc}</p>
+            <figure className="h-48 w-full overflow-hidden">
+              <span className="absolute top-3.5 right-3.5 bg-white/90 text-slate-800 font-bold text-[13px] px-3 py-1.5 rounded-full">{destinies.Price}</span>
+              <img className="h-full w-full object-cover"
+                src={destinies.image}
+                alt={destinies.name} />
+            </figure>
+                <div className="p-6 relative pb-16 h-full">
+                  <h3 className="font-serif text-xl font-medium">{destinies.name}</h3>
+                  <p 
+                    title={destinies.description2} 
+                    className="text-slate-500 text-sm mt-2 leading-relaxed text-justify line-clamp-3 cursor-help"
+                  >
+                    {destinies.description2}
+                  </p>
+
                 <span className="inline-flex items-center gap-1.5 mt-4 text-sm font-semibold text-indigo-600">
                   Ver guía completa
                   <svg
@@ -77,7 +56,8 @@ export default function FeaturedDestinations() {
                 </span>
               </div>
             </Link>
-          ))}
+           ))
+          }
         </div>
       </div>
     </section>
