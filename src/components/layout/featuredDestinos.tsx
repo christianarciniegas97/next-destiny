@@ -31,13 +31,13 @@ export default async function FeaturedDestinations() {
               className="group bg-white rounded-2xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
             >
             <figure className="h-48 w-full overflow-hidden">
-              <span className="absolute top-3.5 right-3.5 text-slate-800 font-bold text-[13px] px-3 py-1.5 rounded-full">{destinies.Price}</span>
+              <span className="absolute top-3.5 right-3.5 text-slate-800   bg-white/90  font-bold text-[13px] px-3 py-1.5 rounded-full">{destinies.Price}</span>
               <img className="h-full w-full object-cover"
                 src={destinies.image}
                 alt={destinies.name} />
             </figure>
                 <div className="p-6 relative pb-16 h-full">
-                  <h3 className="font-serif text-xl font-medium">{destinies.name}</h3>
+                  <h3 className="font-serif text-xl font-medium text-slate-900">{destinies.name}</h3>
                   <p 
                     title={destinies.description2} 
                     className="text-slate-500 text-sm mt-2 leading-relaxed text-justify line-clamp-3 cursor-help"
