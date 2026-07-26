@@ -15,12 +15,12 @@ export class DestinationRepository {
     }
 
    async findFeaturedTrue () {
-        return await prisma.destination.findMany({
+        return  await prisma.destination.findMany({
             where : {
                 published:true,
                 featured : true
-            }
-        })
+            },
+        });
    }
 
    async findById(id : number) {

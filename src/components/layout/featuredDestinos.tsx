@@ -1,10 +1,12 @@
 import Link from "next/link";
-import { DestinosServices } from "@/src/services/destinos.service";
+import { DestinosServices } from "@/src/services/destinos.service"
 
-const services = new DestinosServices()
+const service = new DestinosServices() 
+
 export default async function FeaturedDestinations() {
 
-  const featuredTrue =  await services.getFeatured();
+  const featuredTrue =  await service.getFeatured();
+
   return (
     <section id="destinos" className="py-20 bg-slate-50/60">
       <div className="max-w-6xl mx-auto px-6">
@@ -19,6 +21,7 @@ export default async function FeaturedDestinations() {
             Guías completas con costos día a día, para que sepas exactamente cuánto llevar.
           </p>
         </div>
+
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {featuredTrue.map((destinies : any) => (

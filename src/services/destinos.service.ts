@@ -21,15 +21,11 @@ export class DestinosServices {
         return destino;
     }
 
-    /* 
-    ** Devuelve solo los destinos que son features
-    */
     async getFeatured(){
         const isFeaturedTrue =  await repository.findFeaturedTrue();
-        if(!isFeaturedTrue){
-            return {
-                message:"Destination not found"
-            }
+        
+        if(!isFeaturedTrue || isFeaturedTrue === null ){
+            throw new Error ("Destination not found")
         }
         return isFeaturedTrue
     }
