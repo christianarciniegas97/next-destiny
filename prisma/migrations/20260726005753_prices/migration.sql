@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE `Destination` MODIFY `Price` VARCHAR(191) NOT NULL DEFAULT '',
+    MODIFY `description2` VARCHAR(191) NOT NULL DEFAULT '';

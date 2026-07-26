@@ -14,9 +14,9 @@ model Destination {
   name        String
   slug        String   @unique
   image       String
-  Price       String   @db.Text
+  Price       String @default("")
   description String   @db.Text
-  description2 String   @db.Text
+  description2 String @default("")
   published   Boolean  @default(false)
   featured    Boolean  @default(false)
   createdAt   DateTime @default(now())
