@@ -1,0 +1,3 @@
+-- AlterTable
+ALTER TABLE `Destination` ADD COLUMN `Capital` VARCHAR(191) NOT NULL DEFAULT '',
+    ADD COLUMN `VisaType` VARCHAR(191) NOT NULL DEFAULT '';
