@@ -7,10 +7,7 @@ export class DestinationRepository {
         return  await prisma.destination.findMany({
             where : {
                 published:true,
-            },
-            orderBy: {
-                id: "asc",
-            },
+            }
         });
     }
 

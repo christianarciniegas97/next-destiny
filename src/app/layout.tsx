@@ -20,11 +20,11 @@ export default function DashboardLayout({
   return (
     <html lang="es">
       <body className={`${fraunces.variable} ${inter.variable} font-sans`}>
-            <Navbar />
+            <Navbar/>
             <main className="pt-16">
               {children}
             </main>
-            <Footer />
+             <Footer />
       </body>
     </html>
   )

@@ -1,4 +1,4 @@
-import Card from "@/src/components/layout/card"
+import Card from "@/src/components/ui/card"
 
 
 export default function Dashboard() {

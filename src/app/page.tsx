@@ -1,7 +1,7 @@
-import FeaturedDestinations from "../components/layout/featuredDestinos"
-import Newsletter from "../components/layout/newsletter"
-import WhyDestiny from "../components/layout/whyDestiny"
-import Hero from "../components/ui/hero"
+import FeaturedDestinations from "@/src/components/landing/featuredDestinos"
+import Newsletter from "@/src/components/landing/newsletter"
+import WhyDestiny from "@/src/components/landing/whyDestiny"
+import Hero from "@/src/components/landing/hero"
 
 export default function Home() {
   return (
