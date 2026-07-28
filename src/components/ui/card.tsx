@@ -37,7 +37,7 @@ export default function Card ({
             <div>
                     <div className="flex flex-wrap gap-1.5">
                         {[
-                            { field: "price", value: `Precio por dia: ${PricePerDay}` },
+                            { field: "price", value: `Presupuesto diario: ${PricePerDay}` },
                             { field: "capital", value: capital },
                             { field: "visa", value: `Requisitos: ${visa}` },
                         ].map((item) => (

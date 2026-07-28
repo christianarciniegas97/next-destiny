@@ -34,6 +34,7 @@ export default function DestinationSearch({value, action } : Props) {
           focus:ring-2
           focus:ring-blue-500
           transition
+          text-slate-900
         "
 
       />
