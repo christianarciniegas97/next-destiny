@@ -33,13 +33,13 @@ export default function Card ({
                 alt={alt} />
         </figure>
         <div className="card-body">
-            <h2 className="card-title">{title}</h2>
+            <h2 className="card-title text-slate-900">{title}</h2>
             <div>
                     <div className="flex flex-wrap gap-1.5">
                         {[
-                            { field: "price", value: PricePerDay },
+                            { field: "price", value: `Precio por dia: ${PricePerDay}` },
                             { field: "capital", value: capital },
-                            { field: "visa", value: visa },
+                            { field: "visa", value: `Requisitos: ${visa}` },
                         ].map((item) => (
                             <span key={item.field} className="bg-slate-100 text-slate-600 rounded-full px-2.5 py-1 text-xs">
                                 {item.value}
